@@ -1,0 +1,14 @@
+C:\Users\jack.gissle\Desktop\Prog tva\ComplimentsToTheChef\GenericCopyPasta\bin\Debug\net8.0\GenericCopyPasta.exe
+C:\Users\jack.gissle\Desktop\Prog tva\ComplimentsToTheChef\GenericCopyPasta\bin\Debug\net8.0\GenericCopyPasta.deps.json
+C:\Users\jack.gissle\Desktop\Prog tva\ComplimentsToTheChef\GenericCopyPasta\bin\Debug\net8.0\GenericCopyPasta.runtimeconfig.json
+C:\Users\jack.gissle\Desktop\Prog tva\ComplimentsToTheChef\GenericCopyPasta\bin\Debug\net8.0\GenericCopyPasta.dll
+C:\Users\jack.gissle\Desktop\Prog tva\ComplimentsToTheChef\GenericCopyPasta\bin\Debug\net8.0\GenericCopyPasta.pdb
+C:\Users\jack.gissle\Desktop\Prog tva\ComplimentsToTheChef\GenericCopyPasta\obj\Debug\net8.0\GenericCopyPasta.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jack.gissle\Desktop\Prog tva\ComplimentsToTheChef\GenericCopyPasta\obj\Debug\net8.0\GenericCopyPasta.AssemblyInfoInputs.cache
+C:\Users\jack.gissle\Desktop\Prog tva\ComplimentsToTheChef\GenericCopyPasta\obj\Debug\net8.0\GenericCopyPasta.AssemblyInfo.cs
+C:\Users\jack.gissle\Desktop\Prog tva\ComplimentsToTheChef\GenericCopyPasta\obj\Debug\net8.0\GenericCopyPasta.csproj.CoreCompileInputs.cache
+C:\Users\jack.gissle\Desktop\Prog tva\ComplimentsToTheChef\GenericCopyPasta\obj\Debug\net8.0\GenericCopyPasta.dll
+C:\Users\jack.gissle\Desktop\Prog tva\ComplimentsToTheChef\GenericCopyPasta\obj\Debug\net8.0\refint\GenericCopyPasta.dll
+C:\Users\jack.gissle\Desktop\Prog tva\ComplimentsToTheChef\GenericCopyPasta\obj\Debug\net8.0\GenericCopyPasta.pdb
+C:\Users\jack.gissle\Desktop\Prog tva\ComplimentsToTheChef\GenericCopyPasta\obj\Debug\net8.0\GenericCopyPasta.genruntimeconfig.cache
+C:\Users\jack.gissle\Desktop\Prog tva\ComplimentsToTheChef\GenericCopyPasta\obj\Debug\net8.0\ref\GenericCopyPasta.dll
