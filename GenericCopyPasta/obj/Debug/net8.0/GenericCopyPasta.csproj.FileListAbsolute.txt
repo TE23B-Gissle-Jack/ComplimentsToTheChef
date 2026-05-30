@@ -12,3 +12,4 @@ C:\Users\jack.gissle\Desktop\Prog tva\ComplimentsToTheChef\GenericCopyPasta\obj\
 C:\Users\jack.gissle\Desktop\Prog tva\ComplimentsToTheChef\GenericCopyPasta\obj\Debug\net8.0\GenericCopyPasta.pdb
 C:\Users\jack.gissle\Desktop\Prog tva\ComplimentsToTheChef\GenericCopyPasta\obj\Debug\net8.0\GenericCopyPasta.genruntimeconfig.cache
 C:\Users\jack.gissle\Desktop\Prog tva\ComplimentsToTheChef\GenericCopyPasta\obj\Debug\net8.0\ref\GenericCopyPasta.dll
+C:\Users\jack.gissle\Desktop\Prog tva\ComplimentsToTheChef\GenericCopyPasta\obj\Debug\net8.0\GenericCopyPasta.sourcelink.json

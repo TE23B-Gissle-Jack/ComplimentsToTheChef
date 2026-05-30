@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GenericCopyPasta")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6893e689fea72fda19956841223cb881be3bb8da")]
 [assembly: System.Reflection.AssemblyProductAttribute("GenericCopyPasta")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GenericCopyPasta")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

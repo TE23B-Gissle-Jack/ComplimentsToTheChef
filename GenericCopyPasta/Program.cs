@@ -1,12 +1,8 @@
-﻿
+﻿using System.Diagnostics;
 
 string usersRoot = @"C:\Users";
 Dictionary<string, Dictionary<string, string>> users = new Dictionary<string, Dictionary<string, string>>();
-List<string> filter = [
-    Path.Combine(usersRoot,"Default"),
-    Path.Combine(usersRoot,"Public"), 
-    Path.Combine(usersRoot,"All Users"), 
-    Path.Combine(usersRoot,"Default User")];
+List<string> filter = ["Default", "Public", "All Users", "Default User"];
 
 foreach (string userDir in Directory.GetDirectories(usersRoot))
 {
@@ -16,82 +12,64 @@ foreach (string userDir in Directory.GetDirectories(usersRoot))
         { "pictures", Path.Combine(userDir, "Pictures") },
         { "contacts", Path.Combine(userDir, "Contacts") }
     };
-    users.Add(userDir, directories);
+    users.Add(Path.GetFileName(userDir), directories);
 }
 foreach (string target in filter)
 {
     users.Remove(target);
 }
-// foreach (var user in users)
-// {
-//     Console.WriteLine(user.Key);
-// }
-// Console.ForegroundColor = ConsoleColor.Yellow;
-// Console.WriteLine("select user");
-// Console.ForegroundColor = ConsoleColor.White;
-// string resp = "";
-// while (!users.Keys.Contains(resp))
-// {
-//     resp = Console.ReadLine();
-//     Console.SetCursorPosition(0, Console.GetCursorPosition().Top - 1);
-//     Console.WriteLine("                                          ");//indeed
-//     Console.SetCursorPosition(0, Console.GetCursorPosition().Top - 1);
-// }
-// history.Push(resp);
-// Console.Clear();
-// Console.ForegroundColor = ConsoleColor.DarkYellow;
-// Console.WriteLine("back");
-// Console.ForegroundColor = ConsoleColor.White;
-// foreach (var directory in users[resp])
-// {
-//     Console.WriteLine(directory.Key);
-// }
-// Console.ForegroundColor = ConsoleColor.Yellow;
-// Console.WriteLine("select directory");
-// Console.ForegroundColor = ConsoleColor.White;
-// string resp2 = "";
-// while (!users[resp].Keys.Contains(resp2) && resp2 != "back")
-// {
-//     resp2 = Console.ReadLine();
-//     Console.SetCursorPosition(0, Console.GetCursorPosition().Top - 1);
-//     Console.WriteLine("                                          ");//indeed
-//     Console.SetCursorPosition(0, Console.GetCursorPosition().Top - 1);
-// }
-// Console.WriteLine("!!!!");
-// Console.ReadLine();
 
-Stack<string> history = new Stack<string>();
+Stack<List<string>> history = new();
 
-string user = SelectFilePath(users.Keys.ToList(), "select user");
-
-if (user == "back") return;
-
-history.Push(user);
+///////////////////////////////////////////////////////
+List<string> userNames = users.Keys.ToList();
 
 while (true)
 {
-    string dir = SelectFilePath(users[user].Keys.ToList(), "select directory");
+    string selectedUser = SelectFilePath(userNames, "Select user:");
 
-    if (dir == "back")
+    if (selectedUser == "back")
     {
-        if (history.Count > 1)
-        {
-            history.Pop();          // remove user
-            user = history.Peek();  //back
-            Console.Clear();
-            continue;
-        }
-        else
-        {
-            Console.WriteLine("No more history");
-            break;
-        }
+        if (history.Count == 0) return;
+        userNames = history.Pop();
+        continue;
     }
 
-    history.Push(dir);
+    history.Push(userNames);
 
-    Console.WriteLine(users[user][dir]);
+    var dirs = users[selectedUser];
+    List<string> dirKeys = dirs.Keys.ToList();
+
+    while (true)
+    {
+        string selectedDirKey = SelectFilePath(dirKeys, "Select folder:");
+
+        if (selectedDirKey == "back")
+        {
+            dirKeys = history.Pop();
+            break;
+        }
+
+        history.Push(dirKeys);
+
+        List<string> more = Directory.GetFiles(users[selectedUser][selectedDirKey]).ToList();
+
+        while (true)
+        {
+            string selectedMore = SelectFilePath(more, "Select folder:");
+
+            if (selectedMore == "back")
+            {
+                more = history.Pop();
+                break;
+            }
+
+            Process.Start(selectedMore);
+            Console.ReadLine();
+        }
+    }
 }
+///////////////////////////////////////////////////////
 
 string SelectFilePath(List<string> current, string prompt)
 {
@@ -112,16 +90,17 @@ string SelectFilePath(List<string> current, string prompt)
     Console.ResetColor();
 
     string resp = "";
-    while (!names.Contains(resp)&& resp != "back")
+    while (!names.Contains(resp) && resp != "back")//mind your caps
     {
-        resp = Console.ReadLine().ToLower();
+        resp = Console.ReadLine();
 
         Console.SetCursorPosition(0, Console.CursorTop - 1);
-        Console.Write("                                ");//indeed
+        Console.Write("                                ");
         Console.SetCursorPosition(0, Console.CursorTop - 1);
     }
 
     Console.Clear();
+
     if (resp == "back") return "back";
     return current[names.IndexOf(resp)];
 }
